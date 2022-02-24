@@ -52,7 +52,6 @@
 | <a name="input_public_subnets_cidr"></a> [public\_subnets\_cidr](#input\_public\_subnets\_cidr) | CIDR range used by new public subnet and IGW | `list(any)` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | AWS Deployment region. | `any` | n/a | yes |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | CIDR range used by the new VPC. | `string` | n/a | yes |
-<<<<<<< Updated upstream
 ## Outputs
 
 No outputs.
