@@ -252,6 +252,7 @@ resource "aws_instance" "containerInstance" {
   user_data            = <<-EOF
   #!/bin/bash
   echo "ECS_CLUSTER=${var.clusterName}" >> /etc/ecs/ecs.config
+  echo "ECS_LOGLEVEL=debug" >> /etc/ecs/ecs.config
   EOF
   subnet_id            = element(aws_subnet.private_subnet.*.id, 0)
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
