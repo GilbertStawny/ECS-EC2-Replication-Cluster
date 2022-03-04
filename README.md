@@ -4,19 +4,21 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_lacework"></a> [lacework](#requirement\_lacework) | ~> 0.14.0 |
 | <a name="requirement_template"></a> [template](#requirement\_template) | = 2.2.0-m1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.2.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_ecs"></a> [ecs](#module\_ecs) | terraform-aws-modules/ecs/aws | 3.4.1 |
+| <a name="module_lacework_ecs_datacollector"></a> [lacework\_ecs\_datacollector](#module\_lacework\_ecs\_datacollector) | lacework/ecs-agent/aws | ~> 0.1 |
 
 ## Resources
 
@@ -45,13 +47,17 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_account_id"></a> [account\_id](#input\_account\_id) | Your AWS account ID. | `string` | n/a | yes |
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of available AZs for subnets | `list(any)` | n/a | yes |
 | <a name="input_clusterName"></a> [clusterName](#input\_clusterName) | What is the name of your ECS cluster? | `string` | n/a | yes |
 | <a name="input_creator"></a> [creator](#input\_creator) | Name of the LW Engineer creating these resources? | `string` | n/a | yes |
+| <a name="input_lw_token"></a> [lw\_token](#input\_lw\_token) | The access token used for the Lacework agent. | `string` | n/a | yes |
+| <a name="input_lw_url"></a> [lw\_url](#input\_lw\_url) | The full access URL to your Lacework platform. | `string` | n/a | yes |
 | <a name="input_private_subnets_cidr"></a> [private\_subnets\_cidr](#input\_private\_subnets\_cidr) | CIDR range used by new private subnet and NAT | `list(any)` | n/a | yes |
 | <a name="input_public_subnets_cidr"></a> [public\_subnets\_cidr](#input\_public\_subnets\_cidr) | CIDR range used by new public subnet and IGW | `list(any)` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | AWS Deployment region. | `any` | n/a | yes |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | CIDR range used by the new VPC. | `string` | n/a | yes |
+
 ## Outputs
 
 No outputs.
