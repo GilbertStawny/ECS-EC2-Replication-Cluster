@@ -12,6 +12,21 @@ variable "creator" {
   }
 }
 
+variable "account_id" {
+  type        = string
+  description = "Your AWS account ID."
+}
+
+variable "lw_token" {
+  type        = string
+  description = "The access token used for the Lacework agent."
+}
+
+variable "lw_url" {
+  type        = string
+  description = "The full access URL to your Lacework platform."
+}
+
 variable "vpc_cidr" {
   type        = string
   description = "CIDR range used by the new VPC."

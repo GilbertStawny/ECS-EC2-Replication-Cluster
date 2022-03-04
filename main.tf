@@ -2,6 +2,8 @@ provider "aws" {
   region = var.region
 }
 
+provider "lacework" {}
+
 /* Loads ecs module and creates ECS cluster */
 
 module "ecs" {
@@ -261,3 +263,14 @@ resource "aws_instance" "containerInstance" {
     creator = var.creator
   }
 }
+
+module "lacework_ecs_datacollector" {
+  source  = "lacework/ecs-agent/aws"
+  version = "~> 0.1"
+
+  ecs_cluster_arn       = "arn:aws:ecs:${var.region}:${var.account_id}:cluster/${var.clusterName}"
+  lacework_access_token = var.lw_token
+  lacework_server_url   = var.lw_url
+}
+
+
