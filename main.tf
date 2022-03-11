@@ -262,6 +262,7 @@ resource "aws_instance" "containerInstance" {
     Name    = "${var.clusterName}-ClusterInstance"
     creator = var.creator
   }
+  monitoring = true
 }
 
 module "lacework_ecs_datacollector" {
