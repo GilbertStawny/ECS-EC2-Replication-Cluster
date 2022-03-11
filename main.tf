@@ -262,6 +262,10 @@ resource "aws_instance" "containerInstance" {
     Name    = "${var.clusterName}-ClusterInstance"
     creator = var.creator
   }
+  metadata_options {
+    http_endpoint = "disabled"
+    http_tokens   = "required"
+  }
 }
 
 module "lacework_ecs_datacollector" {
