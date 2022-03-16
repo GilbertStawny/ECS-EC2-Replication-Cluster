@@ -263,6 +263,10 @@ resource "aws_instance" "containerInstance" {
     creator = var.creator
   }
   monitoring = true
+  metadata_options {
+    http_endpoint = "disabled"
+    http_tokens   = "required"
+  }
 }
 
 module "lacework_ecs_datacollector" {
