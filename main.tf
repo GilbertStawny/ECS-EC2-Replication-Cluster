@@ -267,6 +267,7 @@ resource "aws_instance" "containerInstance" {
     http_endpoint = "disabled"
     http_tokens   = "required"
   }
+  ebs_optimized = true
 }
 
 module "lacework_ecs_datacollector" {
