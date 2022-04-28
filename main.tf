@@ -141,6 +141,11 @@ resource "aws_route_table_association" "private" {
   route_table_id = aws_route_table.private.id
 }
 
+/* added for IaC scan testing */
+resource security_group {
+cidr_block = local.my_cidrs[var.env]
+}
+
 /* VPC's Default Security Group */
 resource "aws_security_group" "default" {
   name        = "${var.clusterName}-default-sg"

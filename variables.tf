@@ -1,3 +1,8 @@
+variable "env" {
+    type    = string
+    description = "Placeholder var created for IaC scanning replication test."
+}
+
 variable "clusterName" {
   type        = string
   description = "What is the name of your ECS cluster?"
