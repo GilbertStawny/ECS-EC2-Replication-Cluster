@@ -9,12 +9,12 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Scan the repo for vulnerabilities in IaC
         run: |
              # Required to pass the GITHUB and Lacework (LW) environment secrets to use
