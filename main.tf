@@ -56,6 +56,7 @@ resource "aws_subnet" "public_subnet" {
   tags = {
     Name    = "${var.clusterName}-${element(var.availability_zones, count.index)}-public-subnet"
     creator = var.creator
+    replication = true
   }
 }
 
